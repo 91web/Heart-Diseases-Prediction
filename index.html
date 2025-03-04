@@ -6,22 +6,26 @@
     <title>Heart Diseases Predictions App</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <header>
         <h1>Prediction and Classification of Heart Disease</h1>
+    
     </header>
 
     <main>
         <section id="landing" class="active">
-            <h2>Welcome to the Heart Diseases Prediction App</h2>
-            <p>This application uses a comprehensive questionnaire and advanced algorithms to assess your heart health risk. All processing is done in your browser for complete privacy.</p>
-            <div class="graphic-container">
-                <img src="./assets/img/heart.png" alt="Heart Diseases illustration" class="landing-graphic" >
+            <h2 class="animate-fade-in">Welcome to the Heart Diseases Prediction App</h2>
+            <p class="animate-slide-up">This application uses a comprehensive questionnaire and advanced machine learning algorithms to predict your heart health risk. All your information is confidential, so make sure you provide only accurate answers.</p>
+            <div class="graphic-container animate-scale-in">
+                <img src="./assets/img/heart.png" alt="Heart Diseases illustration" class="landing-graphic">
             </div>
-            <form id="name-form">
-                <label for="user-name">Please enter your name:</label>
-                <input type="text" id="user-name" required>
+            <form id="name-form" class="animate-fade-in">
+                <div class="form-group">
+                    <label for="user-name">Please enter your name:</label>
+                    <input type="text" id="user-name" required>
+                </div>
                 <button type="submit" class="btn pulse">Start Questionnaire</button>
             </form>
         </section>
@@ -34,6 +38,7 @@
                 <span id="question-number"></span>
             </div>
             <div id="question-container"></div>
+            <div id="range-guide-container" class="range-guide"></div>
             <div id="navigation">
                 <button id="prev-question" class="btn" disabled>Previous</button>
                 <button id="next-question" class="btn pulse">Next</button>
@@ -41,26 +46,53 @@
         </section>
 
         <section id="results" class="hidden">
-            <h2>Your Heart Diseases Results</h2>
-            <div id="user-greeting"></div>
-            <div id="risk-level" class="result-card"></div>
-            <div id="confidence-score" class="result-card"></div>
-            <div id="contributing-factors" class="result-card"></div>
-            <div id="recommendations" class="result-card"></div>
-            <div class="graphic-container">
+            <div class="results-header">
+                <h2>Your Heart Diseases Results</h2>
+                <div class="results-actions">
+                    <button id="print-results" class="btn-secondary"><i class="fas fa-print"></i> Print Results</button>
+                    <button id="save-results" class="btn-secondary"><i class="fas fa-save"></i> Save Results</button>
+                </div>
+            </div>
+            <div id="user-info" class="result-card animate-fade-in">
+                <div id="user-greeting"></div>
+                <div id="assessment-date"></div>
+            </div>
+            <div id="risk-level" class="result-card animate-slide-up"></div>
+            <div id="confidence-score" class="result-card animate-slide-up"></div>
+            <div id="contributing-factors" class="result-card animate-slide-up"></div>
+            <div id="recommendations" class="result-card animate-slide-up"></div>
+            <div class="graphic-container animate-scale-in">
                 <img src="./assets/img/h2.png" alt="Heart health tips" class="results-graphic">
             </div>
-            <button id="restart" class="btn pulse">Restart Predictions</button>
+            <div class="action-buttons">
+                <button id="restart" class="btn">Restart Prediction</button>
+            </div>
+            <div class="header-actions">
+                <button id="view-history" class="btn-secondary"><i class="fas fa-history"></i> View History</button>
+            </div>
+        </section>
+
+        <section id="history" class="hidden">
+            <div class="history-header">
+                <h2>Previous Assessments</h2>
+                <button id="close-history" class="btn-secondary"><i class="fas fa-times"></i> Close</button>
+            </div>
+            <div id="history-list" class="history-container">
+                <!-- History items will be populated here -->
+                <p id="no-history" class="hidden">No previous assessments found.</p>
+            </div>
         </section>
     </main>
 
-   <footer>
-    <div class="footer-container">
-        <p>&copy; 2025 Prediction and Classification of Heart diseases using machine learning Algorithms - Iyenagbe Progress Oshiozenoya.
-            <br>This is just For educational purposes only. Always consult a healthcare professional for medical advice.</p>
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2025 Prediction and Classification of Heart diseases using machine learning Algorithms</p>
+                <br><p>This is just For educational purposes only. Always consult a healthcare professional for medical advice.</p>
+            <p><strong>Iyenagbe Progress Oshiozenoya.</strong></p>
         </div>
-        </footer>
+    </footer>
 
     <script src="./script.js"></script>
 </body>
 </html>
+
